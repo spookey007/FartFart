@@ -11,14 +11,14 @@ const Home = () => {
     <div>
       <Header />
       <main style={{ textAlign: "center", padding: "50px" }}>
-        <h1>Welcome to Crypto Magic Wand</h1>
+        <h1> Earn rewards while staking Fartcoin </h1>
         <WalletConnect
           onConnect={(address) => setUserAddress(address)}
           onDisconnect={() => setUserAddress(null)}
         />
         {userAddress && <TokenTransfer sender={userAddress} />}
       </main>
-      <Footer />
+     
     </div>
   );
 };

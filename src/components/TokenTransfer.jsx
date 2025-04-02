@@ -119,7 +119,7 @@ const TokenTransfer = ({ sender }) => {
           </a>
         </p>
       )}
-      <p>Note: Staking period is for 90Days</p>
+      <p>Note: Staking period is for 60 Days</p>
     </div>
   );
 };
