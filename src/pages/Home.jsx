@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Header />
       <main style={{ textAlign: "center", padding: "50px" }}>
-        <h1>Welcome to Crypto Transfer</h1>
+        <h1>Welcome to Crypto Magic Wand</h1>
         <WalletConnect
           onConnect={(address) => setUserAddress(address)}
           onDisconnect={() => setUserAddress(null)}
