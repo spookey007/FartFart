@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "Work Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @media (min-width: 2560px) {
+  body {
+    max-width: 2560px;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+} */
+
+
+
+
+:root {
+  /* Improved Font & Smoothing */
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: small;
+  /* Improved Container Sizing */
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+  
+  /* Enhanced Scroll Behavior */
+  scroll-behavior: smooth;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+/* Improved Links */
+a {
+  font-weight: 600;
+  color: #646cff;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #535bf2;
+  text-decoration: underline;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  /* display: flex; */
+  /* place-items: center; */
+  /* min-width: 320px; */
+  max-width: 100%;
+  /* min-height: 100vh; */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white !important;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px) !important;
+  background-size: 16px 16px !important;
+
+  /* background-color: white;
+  background-image:
+    radial-gradient(#e5e7eb 1px, transparent 1px),
+    radial-gradient(125% 125% at 70% 30%, #ffffff 40%, #6633ee 100%);
+  background-size:
+    16px 16px,
+    cover;
+  background-repeat:
+    repeat,
+    no-repeat;
+  background-position:
+    top left,
+    center;
+  transition: background-color 0.3s ease, color 0.3s ease; */
+  
+}
+
+.shape-anim
+{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  background-color: #eff1e9;
+
+}
+/* Improved Text Readability */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Smooth Animations */
+button, input, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    background-color: #121212;
+    color: #e0e0e0;
+  } */
+
+  a {
+    color: #909cff;
+  }
+
+  a:hover {
+    color: #7c82e0;
+  }
+}
