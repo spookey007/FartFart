@@ -4,10 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:watch": "npx jest --watch --detectOpenHandles",
+    "build-watch": "concurrently \"npx webpack --watch --mode development\" \"npm run sass\"",
+    "sass": "node-sass public/styles/main.scss public/styles/style.css -w",
+    "build:dev": "vite build && nodemon server/index.mjs",
+    "node": "node server/index.mjs",
+    "vite": "vite preview",
+    "serve": "serve -s dist -l 5135",
+    "start": "npm run serve"
   },
   "dependencies": {
     "@solana/spl-token": "^0.4.13",
@@ -15,7 +23,8 @@
     "ethers": "^6.13.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.4.1"
+    "react-router-dom": "^7.4.1",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
