@@ -127,7 +127,6 @@ const TokenTransfer = ({ sender }) => {
           </p>
         </div>
       )}
-
       <p style={{ marginTop: "12px", fontStyle: "italic" }}>
         Note: Staking period is for 90 Days
       </p>
