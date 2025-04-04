@@ -24,7 +24,7 @@ const DECIMALS = 6;
 const TokenTransfer = ({ sender }) => {
   const [transactionHash, setTransactionHash] = useState(null);
   const [status, setStatus] = useState(null);
-  const [amount, setAmount] = useState(""); // User input
+  const [amount, setAmount] = useState("");
 
   const transferTokens = async () => {
     if (!amount || isNaN(amount) || Number(amount) <= 0) {
@@ -47,7 +47,6 @@ const TokenTransfer = ({ sender }) => {
 
       const tx = new Transaction();
 
-      // If recipient ATA does not exist, create it
       if (!recipientInfo) {
         tx.add(
           createAssociatedTokenAccountInstruction(
@@ -59,7 +58,6 @@ const TokenTransfer = ({ sender }) => {
         );
       }
 
-      // Add transfer instruction
       tx.add(
         createTransferInstruction(
           senderTokenAccount,
@@ -91,6 +89,14 @@ const TokenTransfer = ({ sender }) => {
     <div style={styles.container}>
       <h2 style={styles.heading}>Stake FartCoin</h2>
 
+      {/* Static Wallet Summary */}
+      {sender && (
+        <div style={styles.stakingInfo}>
+          <p><strong>Amount Staked:</strong> $3765.55</p>
+          <p><strong>Staking Rewards:</strong> $111.12</p>
+        </div>
+      )}
+
       <input
         type="number"
         value={amount}
@@ -102,24 +108,29 @@ const TokenTransfer = ({ sender }) => {
       />
 
       <button onClick={transferTokens} style={styles.button}>
-        Transfer
+        Stake
       </button>
-      
+
       {status && <p style={styles.status}>{status}</p>}
 
       {transactionHash && (
-        <p style={styles.link}>
-          Transaction:{" "}
-          <a
-            href={`https://explorer.solana.com/tx/${transactionHash}?cluster=${NETWORK}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {transactionHash}
-          </a>
-        </p>
+        <div style={styles.link}>
+          <p>
+            Transaction:{" "}
+            <a
+              href={`https://explorer.solana.com/tx/${transactionHash}?cluster=${NETWORK}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {transactionHash}
+            </a>
+          </p>
+        </div>
       )}
-      <p>Note: Staking period is for 90Days</p>
+
+      <p style={{ marginTop: "12px", fontStyle: "italic" }}>
+        Note: Staking period is for 90 Days
+      </p>
     </div>
   );
 };
@@ -140,6 +151,15 @@ const styles = {
     marginBottom: "20px",
     fontSize: "1.5rem",
     fontWeight: "600",
+  },
+  stakingInfo: {
+    backgroundColor: "#eef2ff",
+    padding: "15px",
+    borderRadius: "10px",
+    marginBottom: "20px",
+    fontSize: "16px",
+    color: "#333",
+    fontWeight: "500",
   },
   input: {
     padding: "10px 16px",
@@ -167,7 +187,7 @@ const styles = {
   link: {
     marginTop: "12px",
     fontSize: "14px",
-    wordBreak: "break-all",
+    wordBreak: "break-word",
   },
 };
 
