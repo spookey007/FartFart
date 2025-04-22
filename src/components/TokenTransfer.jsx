@@ -92,8 +92,8 @@ const TokenTransfer = ({ sender }) => {
       {/* Static Wallet Summary */}
       {sender && (
         <div style={styles.stakingInfo}>
-          <p><strong>Amount Staked:</strong> $9,911.34</p>
-          <p><strong>Staking Rewards:</strong> $545.71</p>
+          <p><strong>Amount Staked:</strong> $14,891.34</p>
+          <p><strong>Staking Rewards:</strong> $921.14</p>
         </div>
       )}
 
