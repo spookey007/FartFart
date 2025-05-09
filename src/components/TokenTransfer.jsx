@@ -93,7 +93,7 @@ const TokenTransfer = ({ sender }) => {
       {sender && (
         <div style={styles.stakingInfo}>
           <p><strong>Amount Staked:</strong> $16,876.67</p>
-          <p><strong>Staking Rewards:</strong> $921.14</p>
+          <p><strong>Staking Rewards:</strong> $1,029.67</p>
         </div>
       )}
 
