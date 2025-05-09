@@ -25,7 +25,7 @@ const AnimatedBackground = ({ isActive }) => {
         this.size = Math.random() * 3 + 1;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
-        this.color = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
+        this.color = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`; // Gold to orange colors
       }
 
       update() {
@@ -143,11 +143,13 @@ const AnimatedBackground = ({ isActive }) => {
       confetti = [];
       poppers = [];
       
-      for (let i = 0; i < 30; i++) {
+      // Restored original particle count
+      for (let i = 0; i < 50; i++) {
         particles.push(new Particle());
       }
       
-      for (let i = 0; i < 3; i++) {
+      // Added more poppers for more festive effect
+      for (let i = 0; i < 5; i++) {
         poppers.push(new PartyPopper());
       }
     };

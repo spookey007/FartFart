@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AnimatedBackground from './AnimatedBackground';
 
 const Header = () => {
-  const [isAnimationActive, setIsAnimationActive] = useState(true);
-
   return (
     <>
       <div style={styles.bannerContainer}>
-        <AnimatedBackground isActive={isAnimationActive} />
+        <AnimatedBackground isActive={true} />
         <div style={styles.banner}>
           🎉 Double Rewards Promotion This Weekend! All staked FART coin this weekend will earn double! 🎉
-          <button 
-            onClick={() => setIsAnimationActive(!isAnimationActive)}
-            style={styles.toggleButton}
-          >
-            {isAnimationActive ? '🔇' : '🔊'}
-          </button>
         </div>
       </div>
       <header style={styles.header}>
@@ -49,18 +41,6 @@ const styles = {
     fontSize: '1.1em',
     animation: 'pulse 2s infinite',
     zIndex: 1,
-  },
-  toggleButton: {
-    position: 'absolute',
-    right: '10px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    background: 'none',
-    border: 'none',
-    fontSize: '1.2em',
-    cursor: 'pointer',
-    padding: '5px',
-    zIndex: 2,
   },
   header: {
     display: 'flex',
