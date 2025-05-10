@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model UserWallet {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  walletAddress     String   @unique
+  balance           String   @default("0")
+  lastTransactionAt DateTime?
+  days_staked       Int      @default(0)
+  amount_staked     String   @default("0")
+  amount_withdrawn  String   @default("0")
+  reward_amount     String   @default("0")
+  referralCode      String?  @unique
+  jreferal          String?
+  isAdmin           Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("userwallets")
+}
+
+model Referral {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  walletAddress String   @unique
+  referralCode  String?
+  hasSkipped    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@map("referrals")
+}
+
+model StakingRecord {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  walletAddress String
+  amount        String
+  txHash        String   @unique
+  status        String   @default("pending") // pending, completed, failed
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("stakingrecords")
+} 

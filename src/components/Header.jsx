@@ -7,13 +7,20 @@ const Header = () => {
       <div style={styles.bannerContainer}>
         <AnimatedBackground isActive={true} />
         <div style={styles.banner}>
-          🎉 Double Rewards Promotion This Weekend! All staked FART coin this weekend will earn double! 🎉
+          <p style={styles.bannerText}>
+            🚀 Limited Time Offer: 2x Staking Rewards! Lock in your tokens before Sunday midnight for double earnings. Min. stake: 1000 USDT to qualify.
+          </p>
         </div>
       </div>
       <header style={styles.header}>
         <h1 style={{ margin: 0 }}>
           <a href="/" style={styles.linkTitle}>
-            Hot Air Rises
+            <img 
+              src="/fartcoin.png" 
+              alt="FartFart" 
+              style={styles.logo}
+            />
+            FartFart
           </a>
         </h1>
         <nav>
@@ -47,17 +54,35 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '15px',
-    backgroundColor: '#333',
+    background: 'linear-gradient(90deg, #4CAF50 0%, #45a049 100%)',
     color: 'white',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+  },
+  logo: {
+    height: '32px',
+    width: 'auto',
+    marginRight: '8px',
+    verticalAlign: 'middle',
   },
   linkTitle: {
     color: 'white',
     textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
   },
   link: {
     color: 'white',
     marginRight: '15px',
     textDecoration: 'none',
+    transition: 'opacity 0.2s ease',
+    '&:hover': {
+      opacity: 0.8,
+    },
+  },
+  bannerText: {
+    margin: 0,
   },
 };
 

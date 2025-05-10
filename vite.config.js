@@ -1,13 +1,18 @@
 // vite.config.js
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000, // or your custom port
-    host: true, // allow external access
-    allowedHosts: ['fartfartfart.q7t9r5x2.com'], // ✅ allow the custom host
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
   },
   optimizeDeps: {
     esbuildOptions: {
