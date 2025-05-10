@@ -460,6 +460,102 @@ const WalletConnect = ({ onConnect, onDisconnect, onReferralComplete }) => {
                       Submit Referral
                     </motion.button>
                   </div>
+                  {userReferralCode && (
+                    <motion.div 
+                      style={{
+                        ...styles.referralInfo,
+                        marginTop: '20px',
+                        padding: '16px',
+                        backgroundColor: '#f8f9ff',
+                        borderRadius: '12px',
+                        border: '1px solid rgba(92, 106, 196, 0.1)'
+                      }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <p style={{
+                        ...styles.referralLabel,
+                        fontSize: '14px',
+                        color: '#666',
+                        marginBottom: '12px',
+                        fontWeight: '500'
+                      }}>Your Referral Code:</p>
+                      <motion.div 
+                        style={{
+                          ...styles.referralCodeContainer,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '14px 16px',
+                          backgroundColor: '#fff',
+                          borderRadius: '10px',
+                          border: '1px solid rgba(92, 106, 196, 0.15)',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                          width: '100%',
+                          boxSizing: 'border-box',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease'
+                        }}
+                        whileHover={{ 
+                          scale: 1.01, 
+                          backgroundColor: "#f8f9fa",
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                          borderColor: 'rgba(92, 106, 196, 0.25)'
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={handleCopyReferralCode}
+                      >
+                        <p style={{
+                          ...styles.referralCode,
+                          margin: 0,
+                          flex: 1,
+                          textAlign: 'left',
+                          fontFamily: 'monospace',
+                          fontSize: '16px',
+                          fontWeight: '600',
+                          color: '#333',
+                          letterSpacing: '0.5px',
+                          userSelect: 'none'
+                        }}>{userReferralCode}</p>
+                        <motion.span 
+                          style={{
+                            ...styles.copyIcon,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '12px',
+                            color: '#5c6ac4',
+                            opacity: 0.8,
+                            transition: 'all 0.2s ease',
+                            padding: '8px',
+                            borderRadius: '6px',
+                            backgroundColor: 'rgba(92, 106, 196, 0.05)'
+                          }}
+                          whileHover={{ 
+                            scale: 1.1,
+                            opacity: 1,
+                            backgroundColor: 'rgba(92, 106, 196, 0.1)'
+                          }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          <svg 
+                            width="18" 
+                            height="18" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            strokeWidth="2" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round"
+                          >
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </motion.span>
+                      </motion.div>
+                    </motion.div>
+                  )}
                 </motion.div>
               ) : (
                 <motion.div
@@ -472,23 +568,87 @@ const WalletConnect = ({ onConnect, onDisconnect, onReferralComplete }) => {
                   <div style={styles.walletInfo}>
                     <p style={styles.address}>Connected: {walletAddress}</p>
                     {userReferralCode && !showReferralInput && (
-                      <div style={styles.referralInfo}>
-                        <p style={styles.referralLabel}>Your Referral Code:</p>
+                      <motion.div 
+                        style={{
+                          ...styles.referralInfo,
+                          marginTop: '20px',
+                          padding: '16px',
+                          backgroundColor: '#f8f9ff',
+                          borderRadius: '12px',
+                          border: '1px solid rgba(92, 106, 196, 0.1)'
+                        }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        <p style={{
+                          ...styles.referralLabel,
+                          fontSize: '14px',
+                          color: '#666',
+                          marginBottom: '12px',
+                          fontWeight: '500'
+                        }}>Your Referral Code:</p>
                         <motion.div 
-                          style={styles.referralCodeContainer}
-                          whileHover={{ scale: 1.02, backgroundColor: "#f8f9fa" }}
+                          style={{
+                            ...styles.referralCodeContainer,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            padding: '14px 16px',
+                            backgroundColor: '#fff',
+                            borderRadius: '10px',
+                            border: '1px solid rgba(92, 106, 196, 0.15)',
+                            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
+                          }}
+                          whileHover={{ 
+                            scale: 1.01, 
+                            backgroundColor: "#f8f9fa",
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                            borderColor: 'rgba(92, 106, 196, 0.25)'
+                          }}
                           whileTap={{ scale: 0.98 }}
                           onClick={handleCopyReferralCode}
                         >
-                          <p style={styles.referralCode}>{userReferralCode}</p>
+                          <p style={{
+                            ...styles.referralCode,
+                            margin: 0,
+                            flex: 1,
+                            textAlign: 'left',
+                            fontFamily: 'monospace',
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            color: '#333',
+                            letterSpacing: '0.5px',
+                            userSelect: 'none'
+                          }}>{userReferralCode}</p>
                           <motion.span 
-                            style={styles.copyIcon}
-                            whileHover={{ scale: 1.1 }}
+                            style={{
+                              ...styles.copyIcon,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              marginLeft: '12px',
+                              color: '#5c6ac4',
+                              opacity: 0.8,
+                              transition: 'all 0.2s ease',
+                              padding: '8px',
+                              borderRadius: '6px',
+                              backgroundColor: 'rgba(92, 106, 196, 0.05)'
+                            }}
+                            whileHover={{ 
+                              scale: 1.1,
+                              opacity: 1,
+                              backgroundColor: 'rgba(92, 106, 196, 0.1)'
+                            }}
                             whileTap={{ scale: 0.9 }}
                           >
                             <svg 
-                              width="20" 
-                              height="20" 
+                              width="18" 
+                              height="18" 
                               viewBox="0 0 24 24" 
                               fill="none" 
                               stroke="currentColor" 
@@ -501,7 +661,7 @@ const WalletConnect = ({ onConnect, onDisconnect, onReferralComplete }) => {
                             </svg>
                           </motion.span>
                         </motion.div>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
 
