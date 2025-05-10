@@ -7,6 +7,7 @@ import { dirname } from 'path';
 import dotenv from 'dotenv';
 import { UserWallet } from './models/UserWallet.js';
 import crypto from 'crypto';
+import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -460,6 +461,17 @@ app.get('/api/wallet/stake-info', async (req, res) => {
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// Catch-all: send back React's index.html for any non-API route
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).send('API route not found');
+  }
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 // Start server

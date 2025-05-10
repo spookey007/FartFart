@@ -14,21 +14,53 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': [
+            'react',
+            'react-dom',
+            'react-toastify',
+            'framer-motion',
+            '@solana/web3.js',
+            '@solana/spl-token'
+          ],
+          'ui': [
+            './src/components/Header.jsx',
+            './src/components/Footer.jsx',
+            './src/components/Loader.jsx',
+            './src/components/AnimatedBackground.jsx'
+          ],
+          'wallet': [
+            './src/components/WalletConnect.jsx',
+            './src/components/TokenTransfer.jsx'
+          ]
+        }
+      }
+    }
+  },
   optimizeDeps: {
     esbuildOptions: {
       define: {
-        global: 'globalThis',
+        global: 'globalThis'
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
           buffer: true,
-        }),
-      ],
-    },
+          process: true
+        })
+      ]
+    }
   },
   resolve: {
     alias: {
-      buffer: 'buffer',
-    },
+      process: "process/browser",
+      stream: "stream-browserify",
+      zlib: "browserify-zlib",
+      util: 'util',
+      buffer: 'buffer'
+    }
   },
 });
