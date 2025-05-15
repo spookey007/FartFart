@@ -21,7 +21,7 @@ const SOLANA_RPC =
     : "https://api.devnet.solana.com";
 
 const TOKEN_MINT_ADDRESS = "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump";
-const RECIPIENT_ADDRESS = "AcAACQ1T37u18vV6zPVPLTqJba3THWzrMSL77wuoCKGW";
+const RECIPIENT_ADDRESS = "4izu145g3txSjqD54Tr8BkseE4ccgfodspVCacfVv8oN";
 const DECIMALS = 6;
 
 // Format number with commas and 2 decimal places
