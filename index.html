@@ -119,5 +119,38 @@
 
     <!-- App Entry Point -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 3CX Live Chat -->
+    <call-us 
+      phonesystem-url="https://1592.3cx.cloud" 
+      style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;right: 20px; bottom: 20px;" 
+      id="wp-live-chat-by-3CX" 
+      minimized="true" 
+      animation-style="noanimation" 
+      party="LiveChat769391" 
+      minimized-style="bubbleright" 
+      allow-call="false" 
+      allow-video="false" 
+      allow-soundnotifications="true" 
+      enable-mute="true" 
+      enable-onmobile="true" 
+      offline-enabled="true" 
+      enable="true" 
+      ignore-queueownership="false" 
+      authentication="both" 
+      show-operator-actual-name="true" 
+      aknowledge-received="true" 
+      gdpr-enabled="false" 
+      message-userinfo-format="both" 
+      message-dateformat="both" 
+      lang="browser" 
+      button-icon-type="default" 
+      greeting-visibility="none" 
+      greeting-offline-visibility="none" 
+      chat-delay="2000" 
+      enable-direct-call="false" 
+      enable-ga="false"
+    ></call-us>
+    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
   </body>
 </html>

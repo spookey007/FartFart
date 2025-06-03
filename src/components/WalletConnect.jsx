@@ -752,7 +752,7 @@ const WalletConnect = ({ onConnect, onDisconnect, onReferralComplete }) => {
                 >
                   ✕
                 </motion.button>
-              </div>
+    </div>
               <TokenTransfer 
                 sender={walletAddress} 
                 onClose={() => setShowStakeDialog(false)}
