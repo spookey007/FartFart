@@ -8,7 +8,7 @@ const Header = () => {
         <AnimatedBackground isActive={true} />
         <div style={styles.banner}>
           <p style={styles.bannerText}>
-            🚀 Limited Time Offer: 2x Staking Rewards! Lock in your tokens for the next 48 hours for double earnings. Min. stake: 1000 USDT to qualify.
+            🚀 Limited Time Offer: x3 Staking Rewards! Lock in your tokens for the next 48 hours for double earnings. Min. stake: 1000 USDT to qualify.
           </p>
         </div>
       </div>
