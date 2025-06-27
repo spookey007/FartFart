@@ -7,6 +7,8 @@ const Header = () => {
       <div style={styles.bannerContainer}>
         <AnimatedBackground isActive={true} />
         <div style={styles.banner}>
+        <span style={styles.bannerText}>🚨</span>
+        <span style={styles.validUntil}>Only valid until banner is removed.</span>
           <p style={styles.bannerText}>
             🚀 Limited Time Offer: x4 Staking Rewards! Lock in your tokens for the next 48 hours for double earnings. Min. stake: 1000 USDT to qualify.
           </p>
@@ -84,6 +86,19 @@ const styles = {
   },
   bannerText: {
     margin: 0,
+  },
+  validUntil: {
+    display: 'inline-block',
+    background: '#fffbe6',
+    color: '#d35400',
+    fontWeight: 700,
+    fontSize: '1.15em',
+    borderRadius: '6px',
+    padding: '4px 14px',
+    margin: '0 10px',
+    boxShadow: '0 1px 4px rgba(255, 198, 0, 0.12)',
+    letterSpacing: '0.02em',
+    transition: 'background 0.2s, color 0.2s',
   },
 };
 
