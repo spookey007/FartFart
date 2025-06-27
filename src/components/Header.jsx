@@ -10,7 +10,7 @@ const Header = () => {
         <span style={styles.bannerText}>🚨</span>
         <span style={styles.validUntil}>Only valid until banner is removed.</span>
           <p style={styles.bannerText}>
-            🚀 Limited Time Offer: x4 Staking Rewards! Lock in your tokens for the next 48 hours for double earnings. Min. stake: 1000 USDT to qualify.
+            🚀 Limited Time Offer: x4 Staking Rewards! Lock in your tokens fast, Min. stake: 1000 USDT to qualify.
           </p>
         </div>
       </div>
