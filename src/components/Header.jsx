@@ -39,7 +39,7 @@ const styles = {
   bannerContainer: {
     position: 'relative',
     overflow: 'hidden',
-    display: 'none',
+    display: 'block',
   },
   banner: {
     position: 'relative',
