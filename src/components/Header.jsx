@@ -10,7 +10,7 @@ const Header = () => {
         <span style={styles.bannerText}>🚨</span>
         <span style={styles.validUntil}>Only valid until banner is removed.</span>
           <p style={styles.bannerText}>
-            🚀 Limited Time Offer: x7 Staking Rewards! Min. stake: 1000 USDT to qualify.
+            🚀 Limited Time Offer: x11 Staking Rewards! Min. stake: 1000 USDT to qualify.
           </p>
         </div>
       </div>
