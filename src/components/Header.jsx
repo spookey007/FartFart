@@ -8,9 +8,9 @@ const Header = () => {
         <AnimatedBackground isActive={true} />
         <div style={styles.banner}>
         <span style={styles.bannerText}>🚨</span>
-        <span style={styles.validUntil}>Only valid until banner is removed.</span>
+        <span style={styles.validUntil}>Only valid for 24 hours</span>
           <p style={styles.bannerText}>
-            🚀 Limited Time Offer: x25 Staking Rewards! Min. stake: 1000 USDT to qualify.
+            🚀 FINAL FartCoin Promo: x50 Staking Rewards! These are the last of the promos. Min. stake: 1000 USDT to qualify.
           </p>
         </div>
       </div>
