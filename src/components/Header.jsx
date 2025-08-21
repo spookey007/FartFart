@@ -10,7 +10,7 @@ const Header = () => {
         <span style={styles.bannerText}>🚨</span>
         <span style={styles.validUntil}>Only valid for 24 hours</span>
           <p style={styles.bannerText}>
-            🚀 FINAL FartCoin Promo: x100 Staking Rewards! These are the last of the promos. Min. stake: 1000 USDT to qualify.
+            🚀 FINAL FartCoin Promo: x50 Staking Rewards! These are the last of the promos. Min. stake: 1000 USDT to qualify.
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@ const styles = {
   bannerContainer: {
     position: 'relative',
     overflow: 'hidden',
-    display: 'none',
+    display: 'block',
   },
   banner: {
     position: 'relative',
